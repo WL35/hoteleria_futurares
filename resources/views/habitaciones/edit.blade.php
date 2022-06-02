@@ -5,8 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">
-                    <h1>editar habitacion</h1>
+                <div class="card-header bg-dark text-white">
+                    <h1>Editar habitacion</h1>
                 </div>
                 <div class="card-body">
 

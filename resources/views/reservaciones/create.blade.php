@@ -76,7 +76,7 @@
                                     <label for="res_noches" class="col-md-4 col-form-label text-md-right">{{ __('NRO de Noches') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="res_noches" type="number" min="0" class="form-control @error('res_noches') is-invalid @enderror" name="res_noches" value="{{ old('res_noches') }}" required autocomplete="res_noches" autofocus>
+                                        <input id="res_noches" type="number" min="1" class="form-control @error('res_noches') is-invalid @enderror" name="res_noches" value="{{ old('res_noches') }}" required autocomplete="res_noches" autofocus>
 
                                         @error('res_noches')
                                         <span class="invalid-feedback" role="alert">
@@ -141,7 +141,7 @@
                                     <label for="res_f_salida" class="col-md-4 col-form-label text-md-right">{{ __('Fecha de Salida') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="res_f_salida" type="date" class="form-control @error('res_f_salida') is-invalid @enderror" name="res_f_salida" value="{{ old('res_f_salida') }}" required autocomplete="res_f_salida" autofocus>
+                                        <input id="res_f_salida" type="date" class="form-control @error('res_f_salida') is-invalid @enderror" name="res_f_salida" value="" required autocomplete="res_f_salida" autofocus>
 
                                         @error('res_f_salida')
                                         <span class="invalid-feedback" role="alert">
@@ -227,27 +227,27 @@ const calculos=()=>{
 
 }
 
-
 const obj_n=document.querySelector("#res_noches");
-      const obj_fl=document.querySelector("#res_f_llegada");
-      obj_n.addEventListener("change",()=>{
+const obj_fl=document.querySelector("#res_f_llegada");
+obj_n.addEventListener("change",()=>{
+    
+    calculos_fecha();
+});
+obj_fl.addEventListener("change",()=>{
+    
+    calculos_fecha();
+});
 
-          calculos_fecha();
-    });
-      obj_fl.addEventListener("change",()=>{
+const calculos_fecha=()=>{
+   
+    const n=document.querySelector("#res_noches").value;
+                    	const fl=document.querySelector("#res_f_llegada").value;
+                        	
+                            const fs=moment(fl).add(n, 'days').format('L');
 
-        calculos_fecha();
-    });
+       document.querySelector("#res_f_salida").value=fs;
 
-    const calculos_fecha=()=>{
-      	const n=document.getElementById("#res_noches");
-      	const fl=document.querySelector("#res_f_llegada");
-      	const fc=moment(fl).format('L');;
-      	// const fs=moment(fc).add(5, 'days').format('L');
-          console.log(fc);
-      	// document.querySelector("#res_f_salida").value=fs;
-
-}
+ }
 // window.onload = function(){
 //       const obj_n=document.querySelector("#res_noches");
 //       const obj_fh=document.querySelector("#res_f_llegada");
