@@ -17,7 +17,7 @@
                 </div>
                 <div class="card-body">
                 
-                    <form method="POST" action="{{route('reservaciones.update')}}">
+                    <form method="POST" action="{{route('futreservaciones.update')}}">
                         @csrf
 
 <input type="hidden" name="usu_id"  value="">
@@ -175,7 +175,6 @@ const calculos=()=>{
       	document.querySelector("#res_total").value=vt;
 
 }
-
 const obj_n=document.querySelector("#res_noches");
 const obj_fl=document.querySelector("#res_f_llegada");
 obj_n.addEventListener("change",()=>{

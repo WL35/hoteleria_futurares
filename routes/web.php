@@ -79,3 +79,10 @@ Route::get('/reservaciones/create/{hab_id}','ReservacionesController@create')->n
 route::post('/reservaciones/store','ReservacionesController@store')->name('reservaciones.store');
 Route::get('/reservaciones/edit/{hab_id}','ReservacionesController@edit')->name('reservaciones.edit');
 Route::post('/reservaciones/update/','ReservacionesController@update')->name('reservaciones.update');
+
+Route::post('/reservaciones/anular/{res_id}','ReservacionesController@anular')->name('reservaciones.anular');
+route::get('fut_reservaciones','ReservacionesController@futreservaciones')->name('futreservaciones');
+route::get('futreservaciones_edit/{res_id}','ReservacionesController@futreservaciones_edit')->name('futreservaciones_edit');
+route::post('futreservaciones/update','ReservacionesController@futreservacionesupdate')->name('futreservaciones.update');
+route::post('reservaciones/activar/','ReservacionesController@activar')->name('futreservaciones.activar');
+route::post('reservaciones/search/','ReservacionesController@search')->name('reservaciones.search');

@@ -21,7 +21,7 @@ class Reservaciones extends Migration
             $table->date('res_f_llegada');
             $table->date('res_f_salida');
             $table->integer('res_total');
-            $table->integer('res_estado');
+            $table->integer('res_estado');///1 activo, 2 futura, 3 anulado
             $table->foreignId('cli_id')->references('cli_id')->on('clientes');
               $table->foreignId('hab_id')->references('hab_id')->on('habitaciones');
               $table->foreignId('usu_id')->references('usu_id')->on('users');  

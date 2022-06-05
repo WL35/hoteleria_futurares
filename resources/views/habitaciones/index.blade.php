@@ -13,17 +13,17 @@
 
 
 
-                        <div class="col-md-3 pt-3 ">
+                        <div class="col-md-2 pt-3 ">
                             HABITACIONES
 
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-md-10">
                             <div class="row">
                                 <div class="col-md-2 pt-2">
                                     <label for="">Tipo De Habitacion</label>
 
                                 </div>
-                                <form class="col-md-8 pt-2" action="{{route('habitaciones.search')}}" method="POST">
+                                <form class="col-md-6 pt-2" action="{{route('habitaciones.search')}}" method="POST">
                                     @csrf
                                     <div class="row">
 
@@ -46,12 +46,18 @@
 
                                 </form>
                                 <div class="col-md-2 pt-2">
+                                <a  href="{{route('futreservaciones')}}" class="btn" style="border:solid #000 1px; background: #ABFAB5" >
+                                        Futuras
+                                    </a>
+                                </div>
+                                <div class="col-md-2 pt-2">
                                     <!-- <a href="{{route('clientes.create')}}" class="btn "  style="border:solid #000 1px; background: #ABFAB5">Nuevo</a> -->
 
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn" style="border:solid #000 1px; background: #ABFAB5" data-toggle="modal" data-target="#newmodal">
                                         Nuevo
                                     </button>
+                                   
 
                                     <!-- Modal -->
                                     <div class="modal fade" id="newmodal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

@@ -156,6 +156,7 @@ if(isset($hab_id)){
 <th>Salida</th>
 <th>cliente</th>
 <th>recepcionista</th>
+<th>Estado</th>
 <th>total</th>
 <?php
 $total=0;
@@ -177,6 +178,15 @@ $total+=$re->res_total;
     <td>{{$re->res_f_salida}}</td>
     <td>{{$re->cli_nombre}} {{$re->cli_apellido}}</td>
     <td>{{$re->usu_nombre}} {{$re->usu_apellido}}</td>
+    @if($re->res_estado==1)
+    <td>Rerserva mismo dia</td>
+    @endif 
+    @if($re->res_estado==2)
+    <td>Rerserva futura</td>
+    @endif 
+    @if($re->res_estado==3)
+    <td>Rerserva Anulada</td>
+    @endif
     <td style="text-align: right;">${{number_format($re->res_total,2)}}</td>
 </tr>
 @endforeach

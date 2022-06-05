@@ -135,13 +135,13 @@
                                 </div>
 
 
-
+<input type="text" name="actual" hidden id="actual"  value="">
 
                                 <div class="form-group row">
                                     <label for="res_f_salida" class="col-md-4 col-form-label text-md-right">{{ __('Fecha de Salida') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="res_f_salida" type="date" class="form-control @error('res_f_salida') is-invalid @enderror" name="res_f_salida" value="" required autocomplete="res_f_salida" autofocus>
+                                        <input id="res_f_salida" type="date"  class="form-control @error('res_f_salida') is-invalid @enderror" name="res_f_salida" value="" required autocomplete="res_f_salida" autofocus>
 
                                         @error('res_f_salida')
                                         <span class="invalid-feedback" role="alert">
@@ -156,8 +156,8 @@
 
                                     <div class="col-md-6">
                                         <select class="form-control " name="res_estado" id="validationCustom04" required>
-                                            <option disabled value="">Seleccione un Tipo de Reserva</option>
-                                            <option selected value="1">Reserva para hoy</option>
+                                            <option disabled selected value="">Seleccione un Tipo de Reserva</option>
+                                            <option  value="1">Reserva para hoy</option>
                                             <option value="2">Futura Reserva</option>
 
                                         </select>
@@ -206,6 +206,9 @@
                         <script>
                
 window.onload = function(){
+    const actual=moment().format('L');
+    
+    document.querySelector('#actual').value=actual ;
       const obj_cant=document.querySelector("#res_noches");
       const obj_vu=document.querySelector("#n_res_total");
 
@@ -220,6 +223,8 @@ window.onload = function(){
 }
 
 const calculos=()=>{
+
+
       	const vc=document.querySelector("#res_noches");
       	const vu=document.querySelector("#n_res_total");
       	const vt=vc.value*vu.value;
@@ -248,6 +253,7 @@ const calculos_fecha=()=>{
        document.querySelector("#res_f_salida").value=fs;
 
  }
+
 // window.onload = function(){
 //       const obj_n=document.querySelector("#res_noches");
 //       const obj_fh=document.querySelector("#res_f_llegada");
